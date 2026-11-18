@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nongkrong.id — Preview Video Reels 9:16 (ReyDev Creative Studio)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at 50% 20%, #1e1138 0%, #090514 100%);
+      color: #f8fafc;
+      min-height: 100vh;
+    }
+    .phone-glass {
+      background: rgba(15, 10, 30, 0.75);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(192, 132, 252, 0.25);
+      box-shadow: 0 25px 60px -15px rgba(0,0,0,0.9), 0 0 35px rgba(168, 85, 247, 0.2);
+    }
+    .capcut-sub {
+      text-shadow: 0 2px 10px rgba(0,0,0,0.9), 0 0 20px rgba(250, 204, 21, 0.6);
+      animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .disc-spin {
+      animation: spin 4s linear infinite;
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8 flex flex-col items-center justify-center">
+
+  <!-- Top Studio Header -->
+  <header class="w-full max-w-5xl flex flex-wrap items-center justify-between gap-4 mb-6 pb-4 border-b border-purple-500/20">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-pink-500 flex items-center justify-center text-xl shadow-lg shadow-purple-500/30">
+        🎬
+      </div>
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-purple-400">ReyDev Creative Studio</span>
+          <span class="px-2 py-0.5 text-[10px] font-extrabold rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">9:16 REELS SIMULATOR</span>
+        </div>
+        <h1 class="text-lg md:text-xl font-extrabold text-white">nongkrong.id</h1>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="/output/web-warkop-3793/index.html" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 border border-slate-700 transition flex items-center gap-1.5">
+        <span>🌐 Buka Web Live</span>
+      </a>
+      <a href="/output/web-warkop-3793/STORYBOARD_REELS.md" target="_blank" class="px-3 py-1.5 rounded-lg bg-purple-600/30 hover:bg-purple-600/50 text-xs font-semibold text-purple-200 border border-purple-500/40 transition flex items-center gap-1.5">
+        <span>📄 Naskah .md</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Container: Phone Player + Blueprint Inspector -->
+  <main class="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+    <!-- LEFT / CENTER: 9:16 Vertical Phone Simulator (5 cols) -->
+    <div class="lg:col-span-5 flex flex-col items-center">
+      <div class="relative w-[340px] h-[604px] rounded-[38px] p-3.5 bg-gradient-to-b from-slate-800 via-slate-900 to-black border-[3px] border-slate-700 shadow-2xl shadow-purple-950/60 overflow-hidden select-none">
+        <!-- Phone Outer Notch / Dynamic Island -->
+        <div class="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-5 bg-black rounded-full z-30 flex items-center justify-end px-3">
+          <div class="w-2 h-2 rounded-full bg-emerald-500/80 animate-pulse"></div>
+        </div>
+
+        <!-- 9:16 Screen Viewport -->
+        <div class="relative w-full h-full rounded-[28px] overflow-hidden bg-slate-950 flex flex-col justify-between">
+          <!-- Background Visual with Zoom Effect -->
+          <img id="sceneVisual" src="https://images.unsplash.com/photo-1509785307050-d4066910ec1e?w=800&q=80" alt="Reels Scene" class="absolute inset-0 w-full h-full object-cover brightness-[0.72] transition-all duration-700 ease-out transform scale-100">
+          <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80 pointer-events-none"></div>
+
+          <!-- Top Overlay: Badge, Timer & Waveform -->
+          <div class="relative z-10 pt-7 px-4 flex items-center justify-between">
+            <span id="sceneBadge" class="px-2.5 py-1 rounded-md bg-black/60 backdrop-blur-md text-[10px] font-extrabold text-amber-300 border border-amber-400/30">
+              🔥 VIRAL HOOK
+            </span>
+            <div class="flex items-center gap-2 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-purple-500/30 text-[10px] text-purple-300">
+              <span id="timeDuration">0:00 - 0:03</span>
+              <div id="waveBars" class="flex items-center gap-0.5 h-3 opacity-60">
+                <span class="w-0.5 bg-purple-400 rounded-full h-2"></span>
+                <span class="w-0.5 bg-purple-400 rounded-full h-3"></span>
+                <span class="w-0.5 bg-purple-400 rounded-full h-1.5"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center: Dynamic CapCut Subtitle Pop-Up -->
+          <div class="relative z-10 px-4 my-auto text-center">
+            <div class="inline-block max-w-[90%] px-4 py-3 rounded-2xl bg-black/85 backdrop-blur-md border-2 border-yellow-400 shadow-xl shadow-black/80">
+              <div class="text-[9px] font-extrabold tracking-widest text-purple-300 uppercase mb-1">
+                DYNAMIC SUBTITLE POP-UP
+              </div>
+              <div id="subtitleText" class="capcut-sub text-lg md:text-xl font-black text-yellow-300 uppercase tracking-tight leading-tight">
+                STOP SCROLL DULU!
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom: Meta, Sound Bar & Floating Action Rail -->
+          <div class="relative z-10 p-4">
+            <div class="flex items-end justify-between gap-3">
+              <!-- Account & Caption -->
+              <div class="flex-1 min-w-0 pr-2">
+                <div class="flex items-center gap-1.5 mb-1.5">
+                  <div class="w-6 h-6 rounded-full bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center text-xs font-bold text-white">
+                    R
+                  </div>
+                  <span class="text-xs font-bold text-white truncate">@web-warkop-3793</span>
+                  <span class="text-[10px] text-sky-400">✓</span>
+                </div>
+                <p id="captionText" class="text-[11px] text-slate-200 line-clamp-2 leading-snug mb-2 font-medium">
+                  Stop scroll! Tempat nongkrong se-cozy ini di Jakarta cuma 15 ribuan?!
+                </p>
+                <!-- Audio info -->
+                <div class="flex items-center gap-2 text-[10px] text-purple-300">
+                  <span>🎵</span>
+                  <span class="truncate">ElevenLabs AI Natural Voice • ReyDev Lo-Fi Beat</span>
+                </div>
+              </div>
+
+              <!-- Right Floating Actions -->
+              <div class="flex flex-col items-center gap-3">
+                <button type="button" id="likeBtn" onclick="toggleLike()" class="flex flex-col items-center gap-0.5 group">
+                  <div class="w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-sm group-hover:scale-110 transition">
+                    <span id="likeIcon">❤️</span>
+                  </div>
+                  <span id="likeCount" class="text-[9px] font-bold text-slate-300">14.8k</span>
+                </button>
+                <div class="flex flex-col items-center gap-0.5">
+                  <div class="w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-sm">
+                    💬
+                  </div>
+                  <span class="text-[9px] font-bold text-slate-300">520</span>
+                </div>
+                <div class="flex flex-col items-center gap-0.5">
+                  <div class="w-9 h-9 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center text-sm">
+                    ↗️
+                  </div>
+                  <span class="text-[9px] font-bold text-slate-300">2.1k</span>
+                </div>
+                <!-- Disc Spinner -->
+                <div id="discSpinner" class="w-8 h-8 rounded-full border-2 border-slate-700 bg-slate-900 flex items-center justify-center text-[10px] text-purple-400">
+                  💿
+                </div>
+              </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="mt-3 w-full bg-white/20 h-1 rounded-full overflow-hidden">
+              <div id="progressBar" class="bg-gradient-to-r from-purple-500 to-yellow-400 h-full w-1/5 transition-all duration-300"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Player Controls -->
+      <div class="w-[340px] mt-4 p-3 rounded-2xl phone-glass flex items-center justify-between gap-2">
+        <button type="button" onclick="prevScene()" class="p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-sm transition" title="Scene Sebelumnya">
+          ⏮️
+        </button>
+        <button type="button" id="playBtn" onclick="togglePlay()" class="px-5 py-2 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 font-bold text-xs tracking-wider uppercase shadow-lg shadow-purple-600/30 transition flex items-center gap-1.5">
+          <span id="playIcon">▶️</span>
+          <span id="playLabel">Putar Reels</span>
+        </button>
+        <button type="button" onclick="nextScene()" class="p-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-sm transition" title="Scene Selanjutnya">
+          ⏭️
+        </button>
+        <button type="button" id="voiceToggle" onclick="toggleVoice()" class="px-3 py-2 rounded-xl bg-purple-600/40 hover:bg-purple-600/60 text-xs font-semibold text-purple-200 border border-purple-500/40 transition" title="Voiceover Speech Synthesis">
+          🔊 VO
+        </button>
+      </div>
+    </div>
+
+    <!-- RIGHT: Production Storyboard & Script Breakdown (7 cols) -->
+    <div class="lg:col-span-7 flex flex-col gap-4">
+
+      <!-- Scene Quick Selector Tabs -->
+      <div class="flex items-center gap-2 overflow-x-auto pb-1">
+        
+          <button type="button" onclick="goToScene(0)" id="tabScene0" class="scene-tab px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-purple-600 text-white shadow-md shadow-purple-600/40">
+            Scene 1
+          </button>
+        
+          <button type="button" onclick="goToScene(1)" id="tabScene1" class="scene-tab px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-slate-800/60 text-slate-400 hover:bg-slate-800 hover:text-white">
+            Scene 2
+          </button>
+        
+          <button type="button" onclick="goToScene(2)" id="tabScene2" class="scene-tab px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-slate-800/60 text-slate-400 hover:bg-slate-800 hover:text-white">
+            Scene 3
+          </button>
+        
+          <button type="button" onclick="goToScene(3)" id="tabScene3" class="scene-tab px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-slate-800/60 text-slate-400 hover:bg-slate-800 hover:text-white">
+            Scene 4
+          </button>
+        
+          <button type="button" onclick="goToScene(4)" id="tabScene4" class="scene-tab px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-slate-800/60 text-slate-400 hover:bg-slate-800 hover:text-white">
+            Scene 5
+          </button>
+        
+      </div>
+
+      <!-- Active Scene Production Card -->
+      <div class="p-5 rounded-2xl phone-glass border border-purple-500/20">
+        <div class="flex items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+            <span id="cardBadge" class="px-2.5 py-0.5 rounded text-[11px] font-extrabold bg-amber-400/20 text-amber-300 border border-amber-400/30">
+              🔥 VIRAL HOOK
+            </span>
+            <h2 id="cardTitle" class="text-sm md:text-base font-extrabold text-white">
+              Scene 1 • Viral Hook 3 Detik
+            </h2>
+          </div>
+          <span id="cardDuration" class="text-xs font-mono text-slate-400">
+            0:00 - 0:03
+          </span>
+        </div>
+
+        <div class="space-y-3 text-xs">
+          <!-- Voiceover Line -->
+          <div class="p-3 rounded-xl bg-purple-950/30 border border-purple-500/30">
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <span class="font-bold text-purple-300 flex items-center gap-1">
+                <span>🎙️</span> Gema • Voiceover Script:
+              </span>
+              <button type="button" onclick="speakCurrentScene()" class="text-[10px] text-purple-400 hover:text-purple-200 underline font-semibold">
+                Tes Ucapkan Voiceover 🔊
+              </button>
+            </div>
+            <p id="cardVo" class="text-slate-200 italic font-medium leading-relaxed">
+              "Stop scroll dulu! Masih jaman nongkrong mahal tapi gak nyaman? Kenalin nih tempat cozy di nongkrong.id!"
+            </p>
+          </div>
+
+          <!-- Visual Direction & B-Roll -->
+          <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-700/60">
+            <span class="font-bold text-slate-300 flex items-center gap-1 mb-1">
+              <span>✂️</span> Maya • Visual & B-Roll Direction:
+            </span>
+            <p id="cardVisual" class="text-slate-400 leading-relaxed">
+              Cangkir kopi hitam mengepul asap & biji kopi pilihan
+            </p>
+          </div>
+
+          <!-- Subtitle sequence & SFX -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div class="p-2.5 rounded-xl bg-slate-900/40 border border-slate-800">
+              <span class="font-bold text-amber-300 block mb-1">🔤 Pop-Up Subtitles:</span>
+              <ul id="cardSubs" class="space-y-0.5 text-[11px] text-slate-300">
+                <li>• STOP SCROLL DULU!</li><li>• TEMPAT NONGKRONG SE-COZY INI...</li><li>• CUMA 15 RIBUAN?!</li>
+              </ul>
+            </div>
+            <div class="p-2.5 rounded-xl bg-slate-900/40 border border-slate-800">
+              <span class="font-bold text-sky-300 block mb-1">🔊 Sound & SFX Cue:</span>
+              <p id="cardSfx" class="text-[11px] text-slate-300">
+                Whoosh transition + Lo-Fi Chill Beat
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Production Script Accordion / Copy Area -->
+      <div class="p-5 rounded-2xl phone-glass border border-slate-700/60 flex flex-col gap-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-base">📝</span>
+            <h3 class="text-sm font-bold text-white">Full Naskah Produksi (30 Detik)</h3>
+          </div>
+          <button type="button" onclick="copyFullScript()" class="px-3 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-xs font-bold text-white transition flex items-center gap-1 shadow-md shadow-purple-600/30">
+            <span id="copyIcon">📋</span>
+            <span id="copyLabel">Salin Naskah</span>
+          </button>
+        </div>
+
+        <div id="fullScriptBox" class="p-3 rounded-xl bg-black/50 border border-slate-800 text-xs text-slate-300 font-mono space-y-2 max-h-48 overflow-y-auto leading-relaxed">
+          
+            <div>
+              <span class="text-purple-400 font-bold">[Scene 1 • 0:00 - 0:03]</span><br>
+              <span class="text-yellow-300">VO:</span> "Stop scroll dulu! Masih jaman nongkrong mahal tapi gak nyaman? Kenalin nih tempat cozy di nongkrong.id!"<br>
+              <span class="text-slate-400">Visual:</span> Cangkir kopi hitam mengepul asap & biji kopi pilihan
+            </div>
+          
+            <div>
+              <span class="text-purple-400 font-bold">[Scene 2 • 0:03 - 0:10]</span><br>
+              <span class="text-yellow-300">VO:</span> "Di sini WiFi-nya ngebut, colokan melimpah, dan suasana tenang banget buat nugas atau wfh."<br>
+              <span class="text-slate-400">Visual:</span> Ruang indoor estetik, colokan tiap meja & WiFi kencang
+            </div>
+          
+            <div>
+              <span class="text-purple-400 font-bold">[Scene 3 • 0:10 - 0:18]</span><br>
+              <span class="text-yellow-300">VO:</span> "Kopi susu gula arennya juara, plus roti bakar keju lumer yang wajib kamu cobain!"<br>
+              <span class="text-slate-400">Visual:</span> Es Kopi Susu Gula Aren asli & Roti Bakar Keju lumer
+            </div>
+          
+            <div>
+              <span class="text-purple-400 font-bold">[Scene 4 • 0:18 - 0:24]</span><br>
+              <span class="text-yellow-300">VO:</span> "Buka sampai tengah malam, pas banget buat ngobrol santai bareng teman sambil nikmati promo diskon spesial."<br>
+              <span class="text-slate-400">Visual:</span> Lampu gantung temaram hangat & obrolan santai pengunjung malam
+            </div>
+          
+            <div>
+              <span class="text-purple-400 font-bold">[Scene 5 • 0:24 - 0:30]</span><br>
+              <span class="text-yellow-300">VO:</span> "Komen kata MAU di bawah sekarang, voucher diskon 20% langsung kita kirim ke DM kamu!"<br>
+              <span class="text-slate-400">Visual:</span> Handphone menampilkan notifikasi DM otomatis saat ketik "MAU"
+            </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const scenes = [{"title":"Scene 1 • Viral Hook 3 Detik","badge":"🔥 VIRAL HOOK","duration":"0:00 - 0:03","visual":"https://images.unsplash.com/photo-1509785307050-d4066910ec1e?w=800&q=80","captionVisual":"Cangkir kopi hitam mengepul asap & biji kopi pilihan","hookText":"Stop scroll! Tempat nongkrong se-cozy ini di Jakarta cuma 15 ribuan?!","subtitles":["STOP SCROLL DULU!","TEMPAT NONGKRONG SE-COZY INI...","CUMA 15 RIBUAN?!"],"vo":"ElevenLabs AI Voice: \"Stop scroll dulu! Masih jaman nongkrong mahal tapi gak nyaman? Kenalin nih tempat cozy di nongkrong.id!\"","sfx":"Whoosh transition + Lo-Fi Chill Beat"},{"title":"Scene 2 • Suasana & Vibe Nongkrong","badge":"🌿 VIBE WARKOP","duration":"0:03 - 0:10","visual":"https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80","captionVisual":"Ruang indoor estetik, colokan tiap meja & WiFi kencang","hookText":"Suasana tenang, playlist lo-fi adem, colokan melimpah siap nugas.","subtitles":["WIFI KENCANG 100 MBPS","COLOKAN DI TIAP MEJA","BEBAS NUGAS SEHARIAN"],"vo":"ElevenLabs AI Voice: \"Di sini WiFi-nya ngebut, colokan melimpah, dan suasana tenang banget buat nugas atau wfh.\"","sfx":"Mellow Keyboard Lo-Fi Beat"},{"title":"Scene 3 • Signature Menu & Camilan","badge":"☕ SIGNATURE MENU","duration":"0:10 - 0:18","visual":"https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80","captionVisual":"Es Kopi Susu Gula Aren asli & Roti Bakar Keju lumer","hookText":"Menu signature kopi susu gula aren asli & camilan legendaris murah meriah.","subtitles":["ES KOPI SUSU AREN ASLI","ROTI BAKAR LUMER","HARGA MULAI 10 RIBU!"],"vo":"ElevenLabs AI Voice: \"Kopi susu gula arennya juara, plus roti bakar keju lumer yang wajib kamu cobain!\"","sfx":"Crunch sound + Pouring liquid SFX"},{"title":"Scene 4 • Suasana Malam & Promo","badge":"🌙 NIGHT VIBES","duration":"0:18 - 0:24","visual":"https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&q=80","captionVisual":"Lampu gantung temaram hangat & obrolan santai pengunjung malam","hookText":"Buka sampai larut malam, promo happy hour diskon 20%.","subtitles":["BUKA SAMPAI MALAM","VOUCHER DISKON 20%","KLAIM HARI INI!"],"vo":"ElevenLabs AI Voice: \"Buka sampai tengah malam, pas banget buat ngobrol santai bareng teman sambil nikmati promo diskon spesial.\"","sfx":"Chime Sparkle + Guitar Strum"},{"title":"Scene 5 • Call to Action (Keyword Otomatis)","badge":"⚡ AUTO-REPLY TRIGGER","duration":"0:24 - 0:30","visual":"https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80","captionVisual":"Handphone menampilkan notifikasi DM otomatis saat ketik \"MAU\"","hookText":"Komen \"MAU\" di bawah sekarang buat dapetin voucher diskon 20% & link menu lengkap!","subtitles":["KOMEN \"MAU\" SEKARANG!","VOUCHER DISKON 20%","KIRIM KE DM OTOMATIS"],"vo":"ElevenLabs AI Voice: \"Komen kata MAU di bawah sekarang, voucher diskon 20% langsung kita kirim ke DM kamu!\"","sfx":"Notification Ding + Chime sparkle"}];
+    let currentSceneIndex = 0;
+    let isPlaying = false;
+    let isVoiceEnabled = true;
+    let playInterval = null;
+    let subInterval = null;
+    let activeSubIndex = 0;
+    let audioCtx = null;
+    let isLiked = false;
+
+    function renderScene(idx) {
+      if (idx < 0 || idx >= scenes.length) return;
+      currentSceneIndex = idx;
+      const s = scenes[idx];
+
+      const visualEl = document.getElementById('sceneVisual');
+      visualEl.style.opacity = '0';
+      setTimeout(() => {
+        visualEl.src = s.visual;
+        visualEl.style.opacity = '1';
+      }, 150);
+
+      document.getElementById('sceneBadge').textContent = s.badge;
+      document.getElementById('timeDuration').textContent = s.duration;
+      document.getElementById('captionText').textContent = s.hookText;
+      document.getElementById('subtitleText').textContent = s.subtitles[0] || '';
+      activeSubIndex = 0;
+
+      const progressPercent = ((idx + 1) / scenes.length) * 100;
+      document.getElementById('progressBar').style.width = progressPercent + '%';
+
+      document.getElementById('cardBadge').textContent = s.badge;
+      document.getElementById('cardTitle').textContent = s.title;
+      document.getElementById('cardDuration').textContent = s.duration;
+      document.getElementById('cardVo').textContent = '"' + s.vo.replace(/^ElevenLabs AI Voice:\s*"?/, '').replace(/"?$/, '') + '"';
+      document.getElementById('cardVisual').textContent = s.captionVisual;
+      document.getElementById('cardSfx').textContent = s.sfx;
+
+      const subsHtml = s.subtitles.map(sub => '<li>• ' + sub + '</li>').join('');
+      document.getElementById('cardSubs').innerHTML = subsHtml;
+
+      scenes.forEach((_, i) => {
+        const tab = document.getElementById('tabScene' + i);
+        if (tab) {
+          if (i === idx) {
+            tab.className = 'scene-tab px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-purple-600 text-white shadow-md shadow-purple-600/40';
+          } else {
+            tab.className = 'scene-tab px-3 py-2 rounded-xl text-xs font-bold transition whitespace-nowrap bg-slate-800/60 text-slate-400 hover:bg-slate-800 hover:text-white';
+          }
+        }
+      });
+
+      if (isPlaying) {
+        playLoFiChord();
+        if (isVoiceEnabled) {
+          speakCurrentScene();
+        }
+      }
+    }
+
+    function togglePlay() {
+      if (isPlaying) {
+        pause();
+      } else {
+        play();
+      }
+    }
+
+    function play() {
+      isPlaying = true;
+      document.getElementById('playLabel').textContent = 'Jeda';
+      document.getElementById('playIcon').textContent = '⏸️';
+      document.getElementById('discSpinner').classList.add('disc-spin');
+      document.getElementById('waveBars').classList.remove('opacity-60');
+
+      playLoFiChord();
+      if (isVoiceEnabled) speakCurrentScene();
+
+      clearInterval(subInterval);
+      subInterval = setInterval(() => {
+        const s = scenes[currentSceneIndex];
+        if (s && s.subtitles.length > 0) {
+          activeSubIndex = (activeSubIndex + 1) % s.subtitles.length;
+          const subEl = document.getElementById('subtitleText');
+          subEl.textContent = s.subtitles[activeSubIndex];
+          subEl.classList.remove('capcut-sub');
+          void subEl.offsetWidth;
+          subEl.classList.add('capcut-sub');
+        }
+      }, 1600);
+
+      clearInterval(playInterval);
+      playInterval = setInterval(() => {
+        if (currentSceneIndex >= scenes.length - 1) {
+          renderScene(0);
+        } else {
+          renderScene(currentSceneIndex + 1);
+        }
+      }, 5500);
+    }
+
+    function pause() {
+      isPlaying = false;
+      document.getElementById('playLabel').textContent = 'Putar Reels';
+      document.getElementById('playIcon').textContent = '▶️';
+      document.getElementById('discSpinner').classList.remove('disc-spin');
+      document.getElementById('waveBars').classList.add('opacity-60');
+      clearInterval(playInterval);
+      clearInterval(subInterval);
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    }
+
+    function nextScene() {
+      const nextIdx = (currentSceneIndex + 1) % scenes.length;
+      renderScene(nextIdx);
+    }
+
+    function prevScene() {
+      const prevIdx = (currentSceneIndex - 1 + scenes.length) % scenes.length;
+      renderScene(prevIdx);
+    }
+
+    function goToScene(idx) {
+      renderScene(idx);
+    }
+
+    function toggleVoice() {
+      isVoiceEnabled = !isVoiceEnabled;
+      const btn = document.getElementById('voiceToggle');
+      if (isVoiceEnabled) {
+        btn.textContent = '🔊 VO';
+        btn.className = 'px-3 py-2 rounded-xl bg-purple-600/40 text-xs font-semibold text-purple-200 border border-purple-500/50 transition';
+        if (isPlaying) speakCurrentScene();
+      } else {
+        btn.textContent = '🔈 Mute';
+        btn.className = 'px-3 py-2 rounded-xl bg-slate-800 text-xs font-semibold text-slate-400 border border-slate-700 transition';
+        if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      }
+    }
+
+    function speakCurrentScene() {
+      if (!('speechSynthesis' in window)) return;
+      window.speechSynthesis.cancel();
+      const s = scenes[currentSceneIndex];
+      if (!s) return;
+      const cleanText = s.vo.replace(/^ElevenLabs AI Voice:\s*"?/, '').replace(/"?$/, '');
+      const utter = new SpeechSynthesisUtterance(cleanText);
+      utter.lang = 'id-ID';
+      utter.rate = 1.05;
+      utter.pitch = 1.0;
+      const voices = window.speechSynthesis.getVoices();
+      const idVoice = voices.find(v => v.lang.includes('id') || v.lang.includes('ID'));
+      if (idVoice) utter.voice = idVoice;
+      window.speechSynthesis.speak(utter);
+    }
+
+    function playLoFiChord() {
+      try {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const chords = [
+          [261.63, 329.63, 392.00, 493.88],
+          [220.00, 261.63, 329.63, 392.00],
+          [174.61, 220.00, 261.63, 329.63],
+          [196.00, 246.94, 293.66, 349.23],
+          [261.63, 329.63, 392.00, 523.25]
+        ];
+        const chord = chords[currentSceneIndex % chords.length];
+        chord.forEach((f, i) => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(f, audioCtx.currentTime);
+          gain.gain.setValueAtTime(0.035, audioCtx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 2.0);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(audioCtx.currentTime + i * 0.04);
+          osc.stop(audioCtx.currentTime + 2.2);
+        });
+      } catch (e) {}
+    }
+
+    function toggleLike() {
+      isLiked = !isLiked;
+      const icon = document.getElementById('likeIcon');
+      const count = document.getElementById('likeCount');
+      if (isLiked) {
+        icon.textContent = '💖';
+        count.textContent = '14.9k';
+      } else {
+        icon.textContent = '❤️';
+        count.textContent = '14.8k';
+      }
+    }
+
+    function copyFullScript() {
+      let scriptText = '🎬 NASKAH LENGKAP VIDEO REELS: ' + "nongkrong.id" + '\n\n';
+      scenes.forEach((s, i) => {
+        scriptText += '[Scene ' + (i + 1) + ' • ' + s.duration + ' • ' + s.badge + ']\n';
+        scriptText += 'VO: ' + s.vo.replace(/^ElevenLabs AI Voice:\s*"?/, '').replace(/"?$/, '') + '\n';
+        scriptText += 'Visual: ' + s.captionVisual + '\n';
+        scriptText += 'Subtitles: ' + s.subtitles.join(' • ') + '\n\n';
+      });
+
+      navigator.clipboard.writeText(scriptText).then(() => {
+        const btn = document.getElementById('copyLabel');
+        btn.textContent = 'Tersalin! ✓';
+        setTimeout(() => { btn.textContent = 'Salin Naskah'; }, 2500);
+      }).catch(() => {
+        alert('Naskah berhasil dipilih untuk disalin.');
+      });
+    }
+
+    if ('speechSynthesis' in window) {
+      window.speechSynthesis.onvoiceschanged = () => {};
+    }
+  </script>
+</body>
+</html>

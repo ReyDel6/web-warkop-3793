@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Scene 1 • Viral Hook 3 Detik",
+    "badge": "🔥 VIRAL HOOK",
+    "duration": "0:00 - 0:03",
+    "visual": "https://images.unsplash.com/photo-1509785307050-d4066910ec1e?w=800&q=80",
+    "captionVisual": "Cangkir kopi hitam mengepul asap & biji kopi pilihan",
+    "hookText": "Stop scroll! Tempat nongkrong se-cozy ini di Jakarta cuma 15 ribuan?!",
+    "subtitles": [
+      "STOP SCROLL DULU!",
+      "TEMPAT NONGKRONG SE-COZY INI...",
+      "CUMA 15 RIBUAN?!"
+    ],
+    "vo": "ElevenLabs AI Voice: \"Stop scroll dulu! Masih jaman nongkrong mahal tapi gak nyaman? Kenalin nih tempat cozy di nongkrong.id!\"",
+    "sfx": "Whoosh transition + Lo-Fi Chill Beat"
+  },
+  {
+    "title": "Scene 2 • Suasana & Vibe Nongkrong",
+    "badge": "🌿 VIBE WARKOP",
+    "duration": "0:03 - 0:10",
+    "visual": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800&q=80",
+    "captionVisual": "Ruang indoor estetik, colokan tiap meja & WiFi kencang",
+    "hookText": "Suasana tenang, playlist lo-fi adem, colokan melimpah siap nugas.",
+    "subtitles": [
+      "WIFI KENCANG 100 MBPS",
+      "COLOKAN DI TIAP MEJA",
+      "BEBAS NUGAS SEHARIAN"
+    ],
+    "vo": "ElevenLabs AI Voice: \"Di sini WiFi-nya ngebut, colokan melimpah, dan suasana tenang banget buat nugas atau wfh.\"",
+    "sfx": "Mellow Keyboard Lo-Fi Beat"
+  },
+  {
+    "title": "Scene 3 • Signature Menu & Camilan",
+    "badge": "☕ SIGNATURE MENU",
+    "duration": "0:10 - 0:18",
+    "visual": "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=800&q=80",
+    "captionVisual": "Es Kopi Susu Gula Aren asli & Roti Bakar Keju lumer",
+    "hookText": "Menu signature kopi susu gula aren asli & camilan legendaris murah meriah.",
+    "subtitles": [
+      "ES KOPI SUSU AREN ASLI",
+      "ROTI BAKAR LUMER",
+      "HARGA MULAI 10 RIBU!"
+    ],
+    "vo": "ElevenLabs AI Voice: \"Kopi susu gula arennya juara, plus roti bakar keju lumer yang wajib kamu cobain!\"",
+    "sfx": "Crunch sound + Pouring liquid SFX"
+  },
+  {
+    "title": "Scene 4 • Suasana Malam & Promo",
+    "badge": "🌙 NIGHT VIBES",
+    "duration": "0:18 - 0:24",
+    "visual": "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800&q=80",
+    "captionVisual": "Lampu gantung temaram hangat & obrolan santai pengunjung malam",
+    "hookText": "Buka sampai larut malam, promo happy hour diskon 20%.",
+    "subtitles": [
+      "BUKA SAMPAI MALAM",
+      "VOUCHER DISKON 20%",
+      "KLAIM HARI INI!"
+    ],
+    "vo": "ElevenLabs AI Voice: \"Buka sampai tengah malam, pas banget buat ngobrol santai bareng teman sambil nikmati promo diskon spesial.\"",
+    "sfx": "Chime Sparkle + Guitar Strum"
+  },
+  {
+    "title": "Scene 5 • Call to Action (Keyword Otomatis)",
+    "badge": "⚡ AUTO-REPLY TRIGGER",
+    "duration": "0:24 - 0:30",
+    "visual": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
+    "captionVisual": "Handphone menampilkan notifikasi DM otomatis saat ketik \"MAU\"",
+    "hookText": "Komen \"MAU\" di bawah sekarang buat dapetin voucher diskon 20% & link menu lengkap!",
+    "subtitles": [
+      "KOMEN \"MAU\" SEKARANG!",
+      "VOUCHER DISKON 20%",
+      "KIRIM KE DM OTOMATIS"
+    ],
+    "vo": "ElevenLabs AI Voice: \"Komen kata MAU di bawah sekarang, voucher diskon 20% langsung kita kirim ke DM kamu!\"",
+    "sfx": "Notification Ding + Chime sparkle"
+  }
+]
