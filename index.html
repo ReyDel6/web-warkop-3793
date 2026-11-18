@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nongkrong.id — Kopi Terbaik, Indomie & Suasana Hangat</title>
+    <meta name="description" content="nongkrong.id - Warung Kopi Modern dengan menu kopi pilihan, Indomie spesial, Wi-Fi 100 Mbps, dan suasana nyaman untuk nongkrong maupun bekerja.">
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#0284c7',
+                        primaryHover: '#0369a1',
+                        accent: '#f59e0b',
+                        darkBg: '#090d16',
+                        darkCard: '#131b2e'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #090d16;
+            color: #f8fafc;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+
+    <!-- Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 shadow-lg">
+        <nav class="container mx-auto px-4 py-3.5 flex justify-between items-center">
+            <a href="#home" class="text-xl md:text-2xl font-black text-white tracking-tight flex items-center gap-2">
+                <span class="p-1.5 rounded-lg bg-sky-500/20 text-sky-400 border border-sky-500/30">☕</span>
+                <span><span class="text-sky-400">nongkrong</span>.id</span>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <ul class="hidden md:flex items-center space-x-7 text-sm font-semibold text-slate-300">
+                <li><a href="#home" class="hover:text-sky-400 transition-colors">Beranda</a></li>
+                <li><a href="#menu" class="hover:text-sky-400 transition-colors">Menu</a></li>
+                <li><a href="#galeri" class="hover:text-sky-400 transition-colors flex items-center gap-1">📸 Galeri</a></li>
+                <li><a href="#kalkulator" class="hover:text-amber-400 transition-colors flex items-center gap-1">🧮 Kalkulator</a></li>
+                <li><a href="#keunggulan" class="hover:text-sky-400 transition-colors">Keunggulan</a></li>
+                <li><a href="#faq" class="hover:text-sky-400 transition-colors">FAQ</a></li>
+                <li><a href="#pesan" class="hover:text-sky-400 transition-colors">Pesan</a></li>
+            </ul>
+
+            <!-- CTA Button & Theme Toggle -->
+            <div class="hidden md:flex items-center gap-3">
+                <button type="button" onclick="toggleTheme()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all text-sm" title="Toggle Tema">
+                    <span id="theme-icon">🌙</span>
+                </button>
+                <a href="#pesan" class="bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold py-2 px-5 rounded-xl text-sm transition-all shadow-md hover:shadow-sky-500/20">
+                    Pesan Sekarang
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-toggle" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 py-4 space-y-3">
+            <a href="#home" onclick="toggleMobileMenu()" class="block text-slate-200 font-semibold py-1">Beranda</a>
+            <a href="#menu" onclick="toggleMobileMenu()" class="block text-slate-200 font-semibold py-1">Menu</a>
+            <a href="#galeri" onclick="toggleMobileMenu()" class="block text-sky-400 font-semibold py-1">📸 Galeri Foto</a>
+            <a href="#kalkulator" onclick="toggleMobileMenu()" class="block text-amber-400 font-semibold py-1">🧮 Kalkulator Pesanan</a>
+            <a href="#keunggulan" onclick="toggleMobileMenu()" class="block text-slate-200 font-semibold py-1">Keunggulan</a>
+            <a href="#faq" onclick="toggleMobileMenu()" class="block text-slate-200 font-semibold py-1">FAQ</a>
+            <a href="#pesan" onclick="toggleMobileMenu()" class="block w-full text-center bg-sky-500 text-white font-bold py-2.5 rounded-xl mt-2">Pesan Sekarang</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-[82vh] flex items-center justify-center text-center overflow-hidden py-20 px-4">
+            <!-- Background Image with Dark Vignette Overlay -->
+            <div class="absolute inset-0 bg-cover bg-center opacity-15" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=2070&auto=format&fit=crop');"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#090d16]/80 to-[#090d16]"></div>
+
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <!-- Badge Status -->
+                <div class="inline-flex items-center gap-2 bg-slate-800/90 border border-slate-700/80 text-amber-400 text-xs sm:text-sm font-bold px-4 py-1.5 rounded-full mb-6 shadow-md backdrop-blur-md">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Buka Setiap Hari, 08:00 - 23:00 WIB • Wi-Fi 100 Mbps</span>
+                </div>
+
+                <!-- Main Title -->
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 text-white tracking-tight drop-shadow-xl">
+                    Nikmati <span class="inline-block px-3 py-0.5 mx-1 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 text-slate-950 font-black shadow-lg shadow-amber-500/20 text-glow">Kopi Terbaik</span> &amp; Suasana Hangat di <span class="text-sky-400">nongkrong.id</span>
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="text-base sm:text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-sm font-medium">
+                    Temukan hidangan kopi pilihan, Indomie kekinian telur kornet, dan camilan lezat lainnya. Tempat sempurna untuk bekerja, bersantai, atau berkumpul bersama sahabat.
+                </p>
+
+                <!-- Dual CTA Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#menu" class="bg-gradient-to-r from-sky-500 to-sky-600 hover:from-sky-400 hover:to-sky-500 text-white font-extrabold py-3.5 px-8 rounded-2xl text-base transition-all duration-300 shadow-lg shadow-sky-500/25 transform hover:-translate-y-0.5">
+                        Lihat Menu Kami ☕
+                    </a>
+                    <a href="#galeri" class="bg-slate-800/90 hover:bg-slate-700 text-sky-400 font-extrabold py-3.5 px-8 rounded-2xl text-base transition-all duration-300 border border-sky-500/30 shadow-lg transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                        <span>📸 Galeri Suasana</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="py-20 px-4 bg-slate-900/60 border-t border-slate-800">
+            <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-14">
+                    <span class="text-xs font-bold text-sky-400 uppercase tracking-wider bg-sky-500/10 px-3 py-1 rounded-full border border-sky-500/20">Daftar Menu Favorit</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3">Menu Spesial Warkop Kami</h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-2">Dibuat dari biji kopi pilihan dan racikan bumbu khas yang menggugah selera.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Item 1 -->
+                    <div class="bg-slate-800/70 border border-slate-700/80 rounded-2xl p-6 shadow-xl hover:border-sky-500/50 transition-all group flex flex-col justify-between overflow-hidden">
+                        <div>
+                            <div class="relative overflow-hidden rounded-xl mb-4 h-48 bg-slate-900">
+                                <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=600&q=80" alt="Kopi Susu Signature" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                <span class="absolute top-3 right-3 px-3 py-1 bg-amber-500/90 backdrop-blur-md text-slate-950 font-black rounded-lg text-xs shadow-md">Best Seller</span>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors">☕ Kopi Susu Signature</h3>
+                                <span class="px-2.5 py-1 bg-amber-500/20 text-amber-400 font-black rounded-lg text-sm border border-amber-500/30">Rp 18.000</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">Espresso ganda berpadu dengan susu kental manis dan gula aren asli yang legit nan harum.</p>
+                        </div>
+                        <button type="button" onclick="quickAdd('kopi')" class="w-full py-2.5 rounded-xl bg-slate-700 hover:bg-sky-600 text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-md">
+                            + Masukkan ke Kalkulator
+                        </button>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="bg-slate-800/70 border border-slate-700/80 rounded-2xl p-6 shadow-xl hover:border-sky-500/50 transition-all group flex flex-col justify-between overflow-hidden">
+                        <div>
+                            <div class="relative overflow-hidden rounded-xl mb-4 h-48 bg-slate-900">
+                                <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80" alt="Indomie Telur Kornet" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                <span class="absolute top-3 right-3 px-3 py-1 bg-sky-500/90 backdrop-blur-md text-white font-black rounded-lg text-xs shadow-md">Favorit Malam</span>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors">🍜 Indomie Telur Kornet</h3>
+                                <span class="px-2.5 py-1 bg-amber-500/20 text-amber-400 font-black rounded-lg text-sm border border-amber-500/30">Rp 16.000</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">Indomie kuah kental dengan topping kornet sapi gurih, telur setengah matang, dan sawi segar.</p>
+                        </div>
+                        <button type="button" onclick="quickAdd('makanan')" class="w-full py-2.5 rounded-xl bg-slate-700 hover:bg-sky-600 text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-md">
+                            + Masukkan ke Kalkulator
+                        </button>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="bg-slate-800/70 border border-slate-700/80 rounded-2xl p-6 shadow-xl hover:border-sky-500/50 transition-all group flex flex-col justify-between overflow-hidden">
+                        <div>
+                            <div class="relative overflow-hidden rounded-xl mb-4 h-48 bg-slate-900">
+                                <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80" alt="Roti Bakar Coklat Keju" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                <span class="absolute top-3 right-3 px-3 py-1 bg-purple-500/90 backdrop-blur-md text-white font-black rounded-lg text-xs shadow-md">Camilan Legit</span>
+                            </div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-sky-400 transition-colors">🍞 Roti Bakar Coklat Keju</h3>
+                                <span class="px-2.5 py-1 bg-amber-500/20 text-amber-400 font-black rounded-lg text-sm border border-amber-500/30">Rp 14.000</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-4">Roti tebal garing di luar lembut di dalam dengan taburan meses coklat pekat dan keju parut melimpah.</p>
+                        </div>
+                        <button type="button" onclick="quickAdd('snack')" class="w-full py-2.5 rounded-xl bg-slate-700 hover:bg-sky-600 text-white font-bold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-md">
+                            + Masukkan ke Kalkulator
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeri Foto Suasana Warkop & Menu Asli -->
+        <section id="galeri" class="py-20 px-4 bg-slate-950 border-t border-slate-800 relative">
+            <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-14">
+                    <span class="inline-block bg-amber-500/10 text-amber-400 border border-amber-500/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+                        Dokumentasi Suasana &amp; Menu
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">📸 Galeri Foto nongkrong.id</h2>
+                    <p class="text-slate-400 text-sm sm:text-base mt-2 max-w-2xl mx-auto">Lihat langsung atmosfer santai tempat nongkrong kami, barista yang siap menyeduh kopi terbaik, hingga sajian kuliner yang selalu bikin kangen.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Foto 1 -->
+                    <div class="group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 shadow-xl hover:border-sky-500/50 transition-all">
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80" alt="Area Nongkrong & WFC Cozy" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <span class="text-[11px] font-bold text-sky-400 bg-sky-950/80 px-2.5 py-0.5 rounded-md border border-sky-500/30">Suasana Indoor</span>
+                            <h4 class="font-bold text-base mt-1">Area WFC &amp; Duduk Santai</h4>
+                            <p class="text-xs text-slate-300">Meja ergonomis, colokan di setiap meja, dan Wi-Fi 100 Mbps stabil.</p>
+                        </div>
+                    </div>
+
+                    <!-- Foto 2 -->
+                    <div class="group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 shadow-xl hover:border-sky-500/50 transition-all">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80" alt="Barista Bar & Manual Brew" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <span class="text-[11px] font-bold text-amber-400 bg-amber-950/80 px-2.5 py-0.5 rounded-md border border-amber-500/30">Barista Corner</span>
+                            <h4 class="font-bold text-base mt-1">Manual Brew &amp; Espresso Mesin</h4>
+                            <p class="text-xs text-slate-300">Biji kopi nusantara pilihan diseduh langsung dengan sepenuh hati.</p>
+                        </div>
+                    </div>
+
+                    <!-- Foto 3 -->
+                    <div class="group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 shadow-xl hover:border-sky-500/50 transition-all">
+                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" alt="Kopi Susu Gula Aren Asli" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <span class="text-[11px] font-bold text-emerald-400 bg-emerald-950/80 px-2.5 py-0.5 rounded-md border border-emerald-500/30">Signature Drink</span>
+                            <h4 class="font-bold text-base mt-1">Kopi Susu Dingin Segar</h4>
+                            <p class="text-xs text-slate-300">Rasa manis gurih seimbang yang bikin nagih setiap tegukan.</p>
+                        </div>
+                    </div>
+
+                    <!-- Foto 4 -->
+                    <div class="group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 shadow-xl hover:border-sky-500/50 transition-all">
+                        <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=800&q=80" alt="Indomie Kuah Telur Kornet" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <span class="text-[11px] font-bold text-amber-400 bg-amber-950/80 px-2.5 py-0.5 rounded-md border border-amber-500/30">Kuliner Andalan</span>
+                            <h4 class="font-bold text-base mt-1">Indomie Telur Kornet Komplit</h4>
+                            <p class="text-xs text-slate-300">Porsi mantap dengan topping melimpah pas buat temen ngobrol.</p>
+                        </div>
+                    </div>
+
+                    <!-- Foto 5 -->
+                    <div class="group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 shadow-xl hover:border-sky-500/50 transition-all">
+                        <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80" alt="Roti Bakar Coklat Keju" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <span class="text-[11px] font-bold text-sky-400 bg-sky-950/80 px-2.5 py-0.5 rounded-md border border-sky-500/30">Camilan Gurih</span>
+                            <h4 class="font-bold text-base mt-1">Roti Bakar Coklat Keju Lumer</h4>
+                            <p class="text-xs text-slate-300">Garing di luar, manis lumer di dalam favorit semua pengunjung.</p>
+                        </div>
+                    </div>
+
+                    <!-- Foto 6 -->
+                    <div class="group relative overflow-hidden rounded-2xl bg-slate-900 border border-slate-800 shadow-xl hover:border-sky-500/50 transition-all">
+                        <img src="https://images.unsplash.com/photo-1509785307050-d4066910ec1e?auto=format&fit=crop&w=800&q=80" alt="Suasana Malam & Komunitas Nongkrong" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500 ease-out">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity"></div>
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <span class="text-[11px] font-bold text-purple-400 bg-purple-950/80 px-2.5 py-0.5 rounded-md border border-purple-500/30">Night Vibe</span>
+                            <h4 class="font-bold text-base mt-1">Lampu Warm &amp; Angin Malam</h4>
+                            <p class="text-xs text-slate-300">Suasana santai hingga larut malam ditemani musik akustik pelan.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kalkulator Hitung Total Belanja Otomatis -->
+        <section id="kalkulator" class="py-20 px-4 bg-slate-900/40 border-t border-slate-800 relative">
+            <div class="container mx-auto max-w-3xl">
+                <div class="text-center mb-10">
+                    <span class="inline-block bg-sky-500/10 text-sky-400 border border-sky-500/30 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+                        Fitur Interaktif
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">🧮 Kalkulator Pesanan Cepat</h2>
+                    <p class="text-slate-400 text-sm mt-1">Hitung estimasi pesanan Anda secara otomatis dan pesan langsung ke WhatsApp!</p>
+                </div>
+
+                <div class="bg-slate-800/80 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-slate-700 shadow-2xl">
+                    <div class="space-y-4 mb-6">
+                        <!-- Row 1 -->
+                        <div class="flex justify-between items-center p-3.5 bg-slate-900/80 rounded-2xl border border-slate-700/60">
+                            <div>
+                                <h4 class="font-bold text-white text-base">☕ Kopi Susu Signature</h4>
+                                <p class="text-xs text-slate-400">Rp 18.000 / cup</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button type="button" onclick="updateQty('kopi', -1)" class="w-8 h-8 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-bold flex items-center justify-center transition-all">-</button>
+                                <span id="qty-kopi" class="w-6 text-center font-bold text-sky-400 text-base">1</span>
+                                <button type="button" onclick="updateQty('kopi', 1)" class="w-8 h-8 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold flex items-center justify-center transition-all">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="flex justify-between items-center p-3.5 bg-slate-900/80 rounded-2xl border border-slate-700/60">
+                            <div>
+                                <h4 class="font-bold text-white text-base">🍜 Indomie Telur Kornet</h4>
+                                <p class="text-xs text-slate-400">Rp 16.000 / porsi</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button type="button" onclick="updateQty('makanan', -1)" class="w-8 h-8 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-bold flex items-center justify-center transition-all">-</button>
+                                <span id="qty-makanan" class="w-6 text-center font-bold text-sky-400 text-base">1</span>
+                                <button type="button" onclick="updateQty('makanan', 1)" class="w-8 h-8 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold flex items-center justify-center transition-all">+</button>
+                            </div>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="flex justify-between items-center p-3.5 bg-slate-900/80 rounded-2xl border border-slate-700/60">
+                            <div>
+                                <h4 class="font-bold text-white text-base">🍞 Roti Bakar Coklat Keju</h4>
+                                <p class="text-xs text-slate-400">Rp 14.000 / porsi</p>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <button type="button" onclick="updateQty('snack', -1)" class="w-8 h-8 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-bold flex items-center justify-center transition-all">-</button>
+                                <span id="qty-snack" class="w-6 text-center font-bold text-sky-400 text-base">0</span>
+                                <button type="button" onclick="updateQty('snack', 1)" class="w-8 h-8 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold flex items-center justify-center transition-all">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Total Card & Checkout -->
+                    <div class="p-5 bg-slate-900 rounded-2xl border border-sky-500/30 flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <div>
+                            <span class="text-xs text-slate-400 block font-medium">Total Estimasi Belanja:</span>
+                            <span id="total-price" class="text-3xl font-black text-amber-400 tracking-tight">Rp 34.000</span>
+                        </div>
+                        <button type="button" onclick="checkoutWA()" class="w-full sm:w-auto px-6 py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl transition-all shadow-lg shadow-emerald-500/25 flex items-center justify-center gap-2 text-sm">
+                            <span>📱 Order via WhatsApp Langsung</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keunggulan Section -->
+        <section id="keunggulan" class="py-20 px-4 bg-slate-950 border-t border-slate-800">
+            <div class="container mx-auto max-w-5xl">
+                <div class="text-center mb-14">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Kenapa Harus Nongkrong di Sini?</h2>
+                    <p class="text-slate-400 text-sm mt-2">Fasilitas terbaik yang disesuaikan untuk kenyamanan pengunjung.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="p-6 bg-slate-800/60 rounded-2xl border border-slate-700/60 text-center">
+                        <div class="text-4xl mb-3">📶</div>
+                        <h4 class="font-bold text-white text-lg mb-2">Wi-Fi Cepat 100 Mbps</h4>
+                        <p class="text-slate-400 text-sm">Browsing, nonton YouTube, atau meeting Zoom lancar tanpa hambatan kuota.</p>
+                    </div>
+                    <div class="p-6 bg-slate-800/60 rounded-2xl border border-slate-700/60 text-center">
+                        <div class="text-4xl mb-3">🔌</div>
+                        <h4 class="font-bold text-white text-lg mb-2">Banyak Stopkontak</h4>
+                        <p class="text-slate-400 text-sm">Setiap sudut meja dilengkapi colokan listrik untuk laptop dan ponsel Anda.</p>
+                    </div>
+                    <div class="p-6 bg-slate-800/60 rounded-2xl border border-slate-700/60 text-center">
+                        <div class="text-4xl mb-3">🌙</div>
+                        <h4 class="font-bold text-white text-lg mb-2">Buka Hingga Larut</h4>
+                        <p class="text-slate-400 text-sm">Buka setiap hari sampai pukul 23:00 malam untuk menemani tugas atau obrolan santai.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 px-4 bg-slate-900/60 border-t border-slate-800">
+            <div class="container mx-auto max-w-3xl">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-extrabold text-white">❓ Tanya Jawab (FAQ)</h2>
+                    <p class="text-slate-400 text-sm mt-1">Pertanyaan umum tentang layanan nongkrong.id.</p>
+                </div>
+                <div class="space-y-4">
+                    <details class="bg-slate-900 border border-slate-800 rounded-2xl p-4 cursor-pointer group">
+                        <summary class="font-bold text-sky-400 flex justify-between items-center text-sm sm:text-base">
+                            <span>Berapa kecepatan Wi-Fi dan apakah gratis?</span>
+                            <span class="text-slate-500 group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+                            Wi-Fi 100% gratis untuk semua pengunjung dengan kecepatan stabil hingga 100 Mbps. Password tersedia di struk meja.
+                        </p>
+                    </details>
+                    <details class="bg-slate-900 border border-slate-800 rounded-2xl p-4 cursor-pointer group">
+                        <summary class="font-bold text-sky-400 flex justify-between items-center text-sm sm:text-base">
+                            <span>Apakah bisa booking tempat untuk komunitas atau nobar?</span>
+                            <span class="text-slate-500 group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+                            Bisa banget! Silakan hubungi kami via WhatsApp minimal H-1 untuk reservasi area khusus nonton bareng atau gathering komunitas.
+                        </p>
+                    </details>
+                    <details class="bg-slate-900 border border-slate-800 rounded-2xl p-4 cursor-pointer group">
+                        <summary class="font-bold text-sky-400 flex justify-between items-center text-sm sm:text-base">
+                            <span>Metode pembayaran apa saja yang diterima?</span>
+                            <span class="text-slate-500 group-open:rotate-180 transition-transform">▼</span>
+                        </summary>
+                        <p class="mt-3 text-sm text-slate-300 leading-relaxed">
+                            Kami menerima pembayaran Cash (Tunai), QRIS (GoPay, OVO, Dana, ShopeePay, BCA Mobile), dan Transfer Bank.
+                        </p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Order / Kontak Section -->
+        <section id="pesan" class="py-20 px-4 bg-slate-950 border-t border-slate-800 text-center">
+            <div class="container mx-auto max-w-md">
+                <h2 class="text-3xl font-extrabold text-white mb-2">Siap Ngopi Hari Ini?</h2>
+                <p class="text-slate-400 text-sm mb-6">Pesan sekarang atau langsung meluncur ke tempat kami!</p>
+                <div class="p-6 bg-slate-800 rounded-3xl border border-slate-700 shadow-xl">
+                    <button type="button" onclick="checkoutWA()" class="w-full py-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-2xl transition-all shadow-lg shadow-emerald-500/20 text-base flex items-center justify-center gap-2">
+                        <span>💬 Chat WhatsApp Admin (Order)</span>
+                    </button>
+                    <p class="text-xs text-slate-400 mt-4">Alamat: Jl. Warkop Hangat No. 12, Area Kampus Utama</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-950 border-t border-slate-800 text-center text-xs text-slate-500">
+        <p>© 2026 nongkrong.id. Powered by Tim ReyDev Studio.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const prices = { kopi: 18000, makanan: 16000, snack: 14000 };
+        const qtys = { kopi: 1, makanan: 1, snack: 0 };
+
+        function updateQty(item, delta) {
+            qtys[item] = Math.max(0, qtys[item] + delta);
+            document.getElementById('qty-' + item).textContent = qtys[item];
+            renderTotal();
+        }
+
+        function quickAdd(item) {
+            qtys[item]++;
+            document.getElementById('qty-' + item).textContent = qtys[item];
+            renderTotal();
+            const el = document.getElementById('kalkulator');
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function renderTotal() {
+            const total = (qtys.kopi * prices.kopi) + (qtys.makanan * prices.makanan) + (qtys.snack * prices.snack);
+            document.getElementById('total-price').textContent = 'Rp ' + total.toLocaleString('id-ID');
+        }
+
+        function checkoutWA() {
+            const total = (qtys.kopi * prices.kopi) + (qtys.makanan * prices.makanan) + (qtys.snack * prices.snack);
+            const msg = encodeURIComponent(
+                'Halo nongkrong.id! Saya mau pesan:\n' +
+                '- Kopi Susu Signature: ' + qtys.kopi + ' cup\n' +
+                '- Indomie Telur Kornet: ' + qtys.makanan + ' porsi\n' +
+                '- Roti Bakar: ' + qtys.snack + ' porsi\n' +
+                'Total Estimasi: Rp ' + total.toLocaleString('id-ID') + '\n' +
+                'Mohon diproses ya!'
+            );
+            window.open('https://wa.me/6281234567890?text=' + msg, '_blank');
+        }
+
+        function toggleMobileMenu() {
+            const m = document.getElementById('mobile-menu');
+            m.classList.toggle('hidden');
+        }
+
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
+            if (isDark) {
+                document.documentElement.classList.remove('dark');
+                document.body.style.backgroundColor = '#f8fafc';
+                document.body.style.color = '#0f172a';
+                document.getElementById('theme-icon').textContent = '☀️';
+            } else {
+                document.documentElement.classList.add('dark');
+                document.body.style.backgroundColor = '#090d16';
+                document.body.style.color = '#f8fafc';
+                document.getElementById('theme-icon').textContent = '🌙';
+            }
+        }
+    </script>
+</body>
+</html>

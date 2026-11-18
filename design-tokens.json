@@ -1,0 +1,17 @@
+{
+  "theme": "modern-custom",
+  "palette": {
+    "primary": "#0284c7",
+    "primaryHover": "#0369a1",
+    "background": "#0f172a",
+    "surface": "#1e293b",
+    "text": "#f8fafc",
+    "textMuted": "#94a3b8",
+    "accent": "#f59e0b",
+    "accentBg": "#fef3c7"
+  },
+  "typography": {
+    "fontHeading": "Plus Jakarta Sans",
+    "fontBody": "Inter"
+  }
+}
